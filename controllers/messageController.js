@@ -1,16 +1,16 @@
 const {body, validationResult} = require("express-validator")
 const db = require("../db/querys")
 
-const lengthError = "must have at least 5 and max. 50 characters."
-const messageLengthError = "must have at least 5 and max. 255 characters."
+const lengthError = "must have at least 2 and max. 50 characters."
+const messageLengthError = "must have at least 2 and max. 255 characters."
 
 const validateSchema = [
     body("title")
-        .isLength({min: 5, max: 50})
+        .isLength({min: 2, max: 50})
         .withMessage(`title ${lengthError}`)
         .trim(),
     body("message")
-        .isLength({min: 5, max: 255})
+        .isLength({min: 2, max: 255})
         .withMessage(`surname ${messageLengthError}`)
         .trim(),
 ]

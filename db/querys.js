@@ -2,8 +2,11 @@
 const pgPool = require("./pool")
 
 const pushUser = async (user) => {
-    await pgPool.query("INSERT INTO users (forename, surname, email, password, role_id) VALUES ($1, $2, $3, $4);",
-        [user.forename, user.surname, user.email, user.password])
+    await pgPool.query(
+        "INSERT INTO users (forename, surname, email, password, role_id) VALUES ($1, $2, $3, $4, $5);",
+        [user.forename, user.surname, user.email, user.password, user.role_id]
+      );
+      
 }
 
 const pushNewMessage = async (newMessage, user) => {
@@ -18,10 +21,14 @@ const getUserCredentials = async (email) => {
 }
 
 const getUserById = async (id) => {
-    const {rows} = await pgPool.query("SELECT u.*, r.role FROM users as u JOIN roles as r ON u.role_id = r.id WHERE u.id = $1",
-        [id]);
+    const {rows} = await pgPool.query("SELECT * FROM users WHERE id = $1", [id]);
+    if (rows.length === 0) {
+        console.log("Kein Benutzer mit dieser ID gefunden.");
+        return null;
+    }
     return rows[0];
-}
+};
+
 
 const updateUserRoleToMember = async (user_id) => {
     await pgPool.query("UPDATE users SET role_id = 2 WHERE id = $1", [user_id]);

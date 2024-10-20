@@ -28,14 +28,23 @@ const strategy = new LocalStrategy(verifyCallback)
 passport.use(strategy);
 
 passport.serializeUser((user, done) => {
+    console.log("Serializing user with ID:", user.id);
     done(null, user.id);
-})
+});
+
 
 passport.deserializeUser(async (id, done) => {
     try {
+        console.log("Deserializing user with ID:", id);
         const user = await db.getUserById(id);
+        if (!user) {
+            console.log("No user found with this ID.");
+            return done(null, false);
+        }
+        console.log("User found:", user);
         done(null, user);
     } catch (err) {
-        done(err)
+        console.error("Error deserializing user:", err);
+        done(err);
     }
-})
+});

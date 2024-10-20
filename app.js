@@ -24,13 +24,14 @@ app.use(
     session({
     store: sessionStore,
     secret: process.env.COOKIE_SECRET,
-    saveUninitialized: true,
+    saveUninitialized: false, // maybe true
     resave: false,
     cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
 }));
 
 //init passport
 require("./config/passport");
+app.use(passport.initialize());
 app.use(passport.session())
 
 app.use((req,res,next) => {

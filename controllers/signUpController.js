@@ -11,18 +11,18 @@ const validateSchema = [
     body("forename")
         .isAlpha()
         .withMessage(`forename ${alphaError}`)
-        .isLength({min: 5, max: 30})
+        .isLength({min: 2, max: 30})
         .withMessage(`forename ${lengthError}`)
         .trim(),
     body("surname")
         .isAlpha()
         .withMessage(`surname ${alphaError}`)
-        .isLength({min: 5, max: 30})
+        .isLength({min: 2, max: 30})
         .withMessage(`surname ${lengthError}`)
         .trim(),
     body("email").isEmail().withMessage(`email ${emailError}`).trim(),
     body("password")
-        .isLength({min: 4})
+        .isLength({min: 12})
         .withMessage(`password ${passwordError}`)
         .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/)
         .withMessage("Password must include at least one lowercase letter, one uppercase letter, one number and one special character")
