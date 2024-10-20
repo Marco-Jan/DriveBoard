@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Arial', sans-serif; 
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header {
@@ -12,7 +14,13 @@ header {
         align-items: center;
         border-bottom: 2px solid cornflowerblue;
         padding: 1rem;
-       
+
+        h4 a {
+            color: black;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
 
         ul {
             display: flex;
@@ -31,7 +39,7 @@ header {
                 transition: transform 0.2s ease-in-out;
 
                 &:hover {
-                    transform: scale(1.13); 
+                    transform: scale(1.13);
                 }
             }
         }
@@ -48,29 +56,32 @@ main {
         flex-direction: column;
         max-width: 50%;
         margin: auto;
-        box-shadow: 5px 5px 5px darkgray; 
+        box-shadow: 5px 5px 5px darkgray;
 
         label {
             margin-bottom: 5px;
         }
 
-        input[type=text], input[type=email], input[type=password], textarea {
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        textarea {
             margin-bottom: 1rem;
             line-height: 1.5rem;
             padding: 5px 15px;
             font-size: 1.1rem;
-            font-family: 'Georgia', serif; 
+            font-family: 'Bebas Neue', serif;
         }
 
         input[type=submit] {
             padding: 15px;
-            background-color: coral; 
+            background-color: coral;
             border: none;
             transition: background-color 200ms ease-in-out;
             cursor: pointer;
 
             &:hover {
-                background-color: darkorange; 
+                background-color: darkorange;
             }
         }
 
@@ -79,7 +90,7 @@ main {
             margin-top: 1rem;
 
             a {
-                color: coral; 
+                color: coral;
             }
         }
     }
@@ -101,6 +112,7 @@ main {
             .message-title {
                 font-size: 1.5rem;
             }
+
             .message-date {
                 font-style: italic;
             }
@@ -109,6 +121,7 @@ main {
         .message-text {
             font-size: 1.1rem;
         }
+
         .author-delete-container {
             display: flex;
             justify-content: space-between;
@@ -132,18 +145,18 @@ main {
 
         .member-code-element {
             min-width: 70%;
-            margin: auto  auto 10px auto;
+            margin: auto auto 10px auto;
             padding: 1rem;
             font-size: 1.1rem;
-            box-shadow: 5px 5px 5px darkgray; 
-            background-color: lightseagreen; 
+            box-shadow: 5px 5px 5px darkgray;
+            background-color: lightseagreen;
         }
     }
 }
 
 a {
     text-decoration: none;
-    color:  whitesmoke
+    color: whitesmoke
 }
 
 #delete-overlay {
@@ -177,14 +190,14 @@ a {
             #delete-confirm,
             #delete-cancel {
                 padding: 15px;
-                background-color: coral; 
+                background-color: coral;
                 border: none;
                 transition: background-color 200ms ease-in-out;
                 cursor: pointer;
                 border-radius: 10px;
 
                 &:hover {
-                    background-color: darkorange; 
+                    background-color: darkorange;
                 }
             }
         }
@@ -197,8 +210,8 @@ footer {
     padding: 1rem;
     height: 80px;
     align-items: center;
-    background-color: darkslateblue; 
-     
+    background-color: darkslateblue;
+
 
     ul {
         display: flex;
@@ -206,8 +219,7 @@ footer {
         li {
             list-style-type: none;
             margin-right: 1rem;
-            
+
         }
     }
 }
-
