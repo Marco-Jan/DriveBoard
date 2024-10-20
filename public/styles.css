@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Arial', sans-serif; 
 }
 
 header {
@@ -11,17 +12,32 @@ header {
         align-items: center;
         border-bottom: 2px solid cornflowerblue;
         padding: 1rem;
+       
 
         ul {
             display: flex;
             justify-content: center;
+
             li {
                 margin-right: 1rem;
                 list-style-type: none;
             }
+
+            a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: inline-block;
+                transition: transform 0.2s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.13); 
+                }
+            }
         }
     }
 }
+
 
 main {
     padding: 2rem;
@@ -32,7 +48,7 @@ main {
         flex-direction: column;
         max-width: 50%;
         margin: auto;
-        box-shadow: 5px 5px 5px gray;
+        box-shadow: 5px 5px 5px darkgray; 
 
         label {
             margin-bottom: 5px;
@@ -43,17 +59,18 @@ main {
             line-height: 1.5rem;
             padding: 5px 15px;
             font-size: 1.1rem;
+            font-family: 'Georgia', serif; 
         }
 
         input[type=submit] {
             padding: 15px;
-            background-color: deepskyblue;
+            background-color: coral; 
             border: none;
             transition: background-color 200ms ease-in-out;
             cursor: pointer;
 
             &:hover {
-                background-color: dodgerblue;
+                background-color: darkorange; 
             }
         }
 
@@ -62,7 +79,7 @@ main {
             margin-top: 1rem;
 
             a {
-                color: deepskyblue;
+                color: coral; 
             }
         }
     }
@@ -73,8 +90,9 @@ main {
         max-width: 85%;
         margin: 25px auto;
         padding: 2rem;
-        box-shadow: 5px 5px 5px gray;
-        background-color: palegreen;
+        box-shadow: 5px 5px 5px darkgray;
+        background-color: rgb(240, 253, 255);
+        border-radius: 8px;
 
         .title-date-container {
             display: flex;
@@ -102,10 +120,9 @@ main {
             #delete-btn {
                 font-size: 1.2rem;
                 cursor: pointer;
+                color: red;
             }
         }
-
-
     }
 
     .member-code-list {
@@ -118,16 +135,15 @@ main {
             margin: auto  auto 10px auto;
             padding: 1rem;
             font-size: 1.1rem;
-            box-shadow: 5px 5px 5px gray;
-            background-color: palegreen;
+            box-shadow: 5px 5px 5px darkgray; 
+            background-color: lightseagreen; 
         }
-
     }
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color:  whitesmoke
 }
 
 #delete-overlay {
@@ -161,29 +177,28 @@ a {
             #delete-confirm,
             #delete-cancel {
                 padding: 15px;
-                background-color: deepskyblue;
+                background-color: coral; 
                 border: none;
                 transition: background-color 200ms ease-in-out;
                 cursor: pointer;
                 border-radius: 10px;
 
                 &:hover {
-                    background-color: dodgerblue;
+                    background-color: darkorange; 
                 }
             }
-
         }
     }
 }
 
 footer {
-
     display: flex;
     justify-content: space-between;
     padding: 1rem;
     height: 80px;
     align-items: center;
-    background-color: limegreen;
+    background-color: darkslateblue; 
+     
 
     ul {
         display: flex;
@@ -191,6 +206,8 @@ footer {
         li {
             list-style-type: none;
             margin-right: 1rem;
+            
         }
     }
 }
+
