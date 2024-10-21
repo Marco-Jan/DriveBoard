@@ -41,7 +41,7 @@ async function main() {
     console.log('seeding ...');
     const host = process.env.HOST; // localhost in .env
     const client = new Client({
-        connectionString: `postgresql://postgres:geheim@localhost:5432/member_club`
+        connectionString: `postgresql://postgres:VOfGRMdWAhFhgvtJlfZxgNpRaFCRDDhX@junction.proxy.rlwy.net:59077/railway`
     })
     await client.connect();
     await client.query(SQL);
