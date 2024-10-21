@@ -51,4 +51,6 @@ app.use("/", indexRouter);
 const messageRouter = require("./routes/messageRouter");
 app.use("/messages", messageRouter)
 
+app.use((err, reg, res,next) => console.log(err));
+
 app.listen(PORT);
